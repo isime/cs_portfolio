@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+</head>
+<body>
+  <div class="screen">
+    <div id="title">
+      <h1>Math Sports<a href="/"><img id='bball' class="show" src="/static/images/bball.png?"></a></h1>
+      <h2>Question Set: {{question_set_id}}</h2>
+    </div>
+    <div class="answer">
+      {% for d in data %}
+      {% if d.question_type == 'placeValue' %}
+        <form id="form2" action="/checkAnswer/{{student_id}}/{{question_set_id}}" method=post style="font:times;">
+          <h6 style="margin-top: 15px; margin-bottom: 0px;">{{d.question[0:-3]}}</h6>
+          <button class="placeholder_button" name="answer" value="{{ d.question[-3] }}" style="margin-top: 0px;">{{ d.question[-3] }}</button>
+          <button class="placeholder_button" name="answer" value="{{ d.question[-2] }}" style="margin-top: 0px;">{{ d.question[-2] }}</button>
+          <button class="placeholder_button" name="answer" value="{{ d.question[-1] }}" style="margin-top: 0px;">{{ d.question[-1] }}</button>
+        </form>
+      {% else %}
+        <form id="form1" action="/checkAnswer/{{student_id}}/{{question_set_id}}" method=post style="font:times;">
+          {{ d.question }} <input class="input_field" name="answer" type="text">
+          <input type="submit" action="/checkAnswer/{{student_id}}/{{question_set_id}}" class="submit_button">
+        </form>
+      {% endif %}
+
+    </div>
+      <div class="animation">
+        {% if d.question_id % 3 == 0 %}
+        <img id='start_view' class="show" src="/static/animations/soccer_start.gif">
+        <img id="miss" class="hidden" src="/static/animations/soccer_incorrect.gif">
+        <img id="goal" class="hidden" src="/static/animations/soccer_correct.gif">
+        {% elif d.question_id % 3 == 2 %}
+        <img id='start_view' class="show" src="/static/animations/basketball_start.gif">
+        <img id="miss" class="hidden" src="/static/animations/basketball_incorrect.gif">
+        <img id="goal" class="hidden" src="/static/animations/basketball_correct.gif">
+        {% else %}
+        <img id='start_view' class="show" src="/static/animations/hockey_start.gif">
+        <img id="miss" class="hidden" src="/static/animations/hockey_incorrect.gif">
+        <img id="goal" class="hidden" src="/static/animations/hockey_correct.gif">
+        {% endif %}
+      </div>
+    <div class="footer">
+      <div id="scoreboard">Score: {{ score }}/{{ totalAnswers }}</div>
+        <a href="#" class="nav_button">&#8249;</a>
+        <a href="#" class="nav_button">&#8250;</a>
+      <div id="progress">Progress: {{ question_number%10 }}/10</div>
+    </div>
+  {% endfor %}
+  </div>
+</body>
+
+<script>
+// Example angular code
+// var app = angular.module('myApp', []);
+// app.controller('formCtrl', function($scope) {
+//     $scope.checkAnswer = function() {
+//         $scope.user = angular.copy($scope.master);
+//     };
+// });
+</script>
+
+<style>
+
+.placeholder_button{
+  background-color: transparent;
+  top: 9vh;
+  font-size: 15vw;
+  color: orange;
+  border: 1px solid transparent;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+}
+
+.placeholder_button:hover {
+  color: green;
+}
+
+html,body {
+  width:100%;
+  height:100%;
+}
+
+img {
+  border-radius: 30px;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+#title {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  font-size: .5vw;
+}
+#bball {
+  margin: auto;
+  text-align: center;
+  width: 2vw;
+}
+
+.footer {
+  margin: 10px;
+  text-align: center;
+}
+
+#scoreboard {
+  margin: 15px;
+  margin-left: 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1vw;
+  text-align: center;
+  font-size: 1.5vw;
+  float:left;
+}
+#progress {
+  margin: 15px;
+  margin-right: 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1vw;
+  text-align: center;
+  font-size: 1.5vw;
+  float:right;
+}
+
+.nav_button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 2vw 4vh;
+  background-color: transparent;
+  color: green;
+  border-radius: 50%;
+  margin: auto;
+  border: 2px solid green;
+}
+
+.nav_button:hover {
+  text-decoration: none;
+  display: inline-block;
+  padding: 2vw 4vh;
+  background-color: orange;
+  color: white;
+  border-radius: 50%;
+  margin: auto;
+  border: 2px solid orange;
+}
+
+.screen {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  height: 50%;
+}
+
+.submit_button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  width: 10vw;
+  height: auto;
+  font-size: 2vw;
+  border-radius: 15px;
+}
+.submit_button:hover {
+  background-color: transparent;
+  color: green;
+  border: 2px solid green;
+}
+
+.input_field {
+  background-color: transparent;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  color: white;
+  font-size: 5vw;
+  font:times;
+  width: 10vw;
+  text-align: center;
+}
+
+.input_field:focus, textarea:focus {
+    outline: none;
+}
+
+
+.answer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-size: 5vw;
+  font:times;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+</style>
+
+</body>
+</html>

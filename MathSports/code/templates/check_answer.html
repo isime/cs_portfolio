@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+</head>
+<body>
+  <div class="screen">
+    <div id="title">
+      <h1>Math Sports<a href="/"><img id='bball' class="show" src="/static/images/bball.png?"></a></h1>
+    </div>
+    <div class="answer">
+      {% for d in data %}
+        {% if d.question_type == 'placevalue' %}
+          Correct Answer: {{d.question[0:-3]}} = {{d.answer}}
+          {% else %}
+          Correct Answer: {{d.answer}}
+          {% endif %}
+      {% endfor %}
+    </div>
+    <div id="container" class="animation">
+      <img id="soccer_miss" class="hidden" src="/static/animations/soccer_incorrect.gif">
+      <img id="soccer_goal_paused" class="hidden" src="/static/animations/soccer_correct_end.gif">
+      <img id="soccer_goal" class="hidden" src="/static/animations/soccer_correct.gif">
+      <img id="soccer_miss_paused" class="hidden" src="/static/animations/soccer_incorrect_end.gif">
+
+      <img id="basketball_miss" class="hidden" src="/static/animations/basketball_incorrect.gif">
+      <img id="basketball_goal_paused" class="hidden" src="/static/animations/basketball_correct_end.gif">
+      <img id="basketball_goal" class="hidden" src="/static/animations/basketball_correct.gif">
+      <img id="basketball_miss_paused" class="hidden" src="/static/animations/basketball_incorrect_end.gif">
+
+      <img id="hockey_miss" class="hidden" src="/static/animations/hockey_incorrect.gif">
+      <img id="hockey_goal_paused" class="hidden" src="/static/animations/hockey_correct_end.gif">
+      <img id="hockey_goal" class="hidden" src="/static/animations/hockey_correct.gif">
+      <img id="hockey_miss_paused" class="hidden" src="/static/animations/hockey_incorrect_end.gif">
+
+    </div>
+    <div class="footer">
+      <div id="scoreboard">Score: {{ score }}/{{ totalAnswers }}</div>
+        <a id="left_nav_button" href="/question/{{student_id}}/{{question_set_id}}" class="nav_button">&#8249;</a>
+        <a id="right_nav_button" href="/question/{{student_id}}/{{question_set_id}}" class="nav_button">&#8250;</a>
+      <div id="progress">Progress: {{ question_number%10 }}/10</div>
+    </div>
+  </div>
+
+<script>
+// window.onload
+window.onload = function() {
+  "{% for d in data %}"
+    if('{{d.question_id}}' % 3 == 0){
+      var animation_name = 'soccer';
+    }
+    else if('{{d.question_id}}' % 3 == 1){
+      var animation_name = 'hockey';
+    }
+    else if('{{d.question_id}}' % 3 == 2){
+      var animation_name = 'basketball';
+    }
+  '{% endfor %}'
+  document.getElementById("container").addEventListener("load", checkAnswer);
+  document.getElementById(animation_name + "_miss").addEventListener("load", checkAnswer(animation_name));
+  document.getElementById(animation_name + "_goal").addEventListener("load", checkAnswer(animation_name));
+  console.log(animation_name);
+};
+
+var someJavaScriptVar = '{{ answer }}';
+
+function playGif(animation_name) {
+  console.log("goal");
+  document.getElementById(animation_name + "_goal").classList.add('show');
+  document.getElementById(animation_name + "_goal").classList.remove('hidden');
+  console.log(animation_name);
+}
+function playMiss(animation_name) {
+  console.log("miss");
+  document.getElementById(animation_name + "_miss").classList.add('show');
+  document.getElementById(animation_name + "_miss").classList.remove('hidden');
+  console.log(animation_name);
+}
+function checkAnswer(animation_name) {
+  console.log('{{ answer}}');
+  console.log(animation_name);
+  if('{{ answer }}' == 'True'){
+      playGif(animation_name);
+      stopGoal(animation_name);
+  }
+  else{
+    playMiss(animation_name);
+    stopMiss(animation_name);
+  }
+}
+function stopGoal(animation_name) {
+    setTimeout(function(){
+      console.log(animation_name);
+        document.getElementById(animation_name + "_goal").classList.add('hidden');
+        document.getElementById(animation_name + "_goal").classList.remove('show');
+        document.getElementById(animation_name + "_goal_paused").classList.add('show');
+        document.getElementById(animation_name + "_goal_paused").classList.remove('hidden');
+    }, 500);
+}
+
+function stopMiss(animation_name) {
+    setTimeout(function(){
+      console.log(animation_name);
+        document.getElementById(animation_name + "_miss").classList.add('hidden');
+        document.getElementById(animation_name + "_miss").classList.remove('show');
+        document.getElementById(animation_name + "_miss_paused").classList.add('show');
+        document.getElementById(animation_name + "_miss_paused").classList.remove('hidden');
+    }, 500);
+}
+</script>
+
+<style>
+
+html,body {
+  width:100%;
+  height:100%;
+}
+
+img {
+  border-radius: 30px;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+#title {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  font-size: .5vw;
+}
+#bball {
+  margin: auto;
+  text-align: center;
+  width: 2vw;
+}
+
+.footer {
+  margin: 10px;
+  text-align: center;
+}
+
+#scoreboard {
+  margin: 15px;
+  margin-left: 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1vw;
+  text-align: center;
+  font-size: 1.5vw;
+  float:left;
+}
+#progress {
+  margin: 15px;
+  margin-right: 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1vw;
+  text-align: center;
+  font-size: 1.5vw;
+  float:right;
+}
+
+.nav_button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 2vw 4vh;
+  background-color: transparent;
+  color: green;
+  border-radius: 50%;
+  margin: auto;
+  border: 2px solid green;
+}
+
+.nav_button:hover {
+  text-decoration: none;
+  display: inline-block;
+  padding: 2vw 4vh;
+  background-color: orange;
+  color: white;
+  border-radius: 50%;
+  margin: auto;
+  border: 2px solid orange;
+}
+
+.screen {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  height: 50%;
+}
+
+.submit_button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  width: 10vw;
+  height: auto;
+  font-size: 2vw;
+  border-radius: 15px;
+}
+.submit_button:hover {
+  background-color: transparent;
+  color: green;
+  border: 2px solid green;
+}
+
+.input_field {
+  background-color: transparent;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  color: white;
+  font-size: 5vw;
+  font:times;
+  width: 10vw;
+  text-align: center;
+}
+
+.input_field:focus, textarea:focus {
+    outline: none;
+}
+
+
+.answer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-size: 5vw;
+  font:times;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+</style>
+
+</body>
+</html>
