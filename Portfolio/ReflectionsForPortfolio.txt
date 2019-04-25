@@ -34,6 +34,7 @@ to, and had to use Python which at the time was a new language to us. This was o
 so it required us to think through the algorithms and the syntax in order to complete the assignment.
 
 Queens (CMPT 202)
+
 	I chose Queens because it required me to think critically and analytically. This program solves the game Queens. The
 object of the game is to place eight queens on a standard chess board, so none of the queens are endanger. To solve this 
 problem the program uses backtracking. This requires you to break down the problem and handle it one queen at a time. In 
