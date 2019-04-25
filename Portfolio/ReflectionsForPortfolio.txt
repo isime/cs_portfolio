@@ -35,9 +35,9 @@ so it required us to think through the algorithms and the syntax in order to com
 
 Queens (CMPT 202)
 	I chose Queens because it required me to think critically and analytically. This program solves the game Queens. The
-object of the game is to place eight queens on a standard chess board, so none of the queens are endanger. To solve this problem
-the program uses backtracking. This requires you to break down the problem and handle it one queen at a time. In each row you
-need to look at the rows above and check that those queens do not endanger the new queen being placed. The algorithm used to 
-solve this problem can be used with an expanded board and more queens. As part of the unit tests for this program, there are 
-boards of all sizes used. 
+object of the game is to place eight queens on a standard chess board, so none of the queens are endanger. To solve this 
+problem the program uses backtracking. This requires you to break down the problem and handle it one queen at a time. In 
+each row you need to look at the rows above and check that those queens do not endanger the new queen being placed. The 
+algorithm used to solve this problem can be used with an expanded board and more queens. As part of the unit tests for 
+this program, there are boards of all sizes used. 
 
