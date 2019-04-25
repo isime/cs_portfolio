@@ -1,15 +1,23 @@
-Ian SimeSoftware Engineering Project      The reason I chose this project is because it is the closest project I’ve done, to a real-world application of my
+Ian SimeMath Sports (Software Engineering Project)      The reason I chose this project is because it is the closest project I’ve done, to a real-world application of my
 knowledge. For this project, we were given customer requests and told to build something that would satisfy those 
 requests. My team built a game to teach math to first and second grades called Math Sports. This project touched on all
- four of the computer science learning goals. We had to have a system-level understanding of the computer, understand 
+four of the computer science learning goals. We had to have a system-level understanding of the computer, understand 
 concepts and techniques of software design, work with a team and individually, and use and learn more problem-solving 
 skills. To start the project, we had to design a game and the architecture behind it. This required us to have an 
 understanding of computers and software design. Then, throughout the project, we had to work together as a team to make 
 this design come to life. This required individual work on certain aspects of the game, and then us putting our 
 individual components together as one. We had to solve various issues throughout the semester to create a finished 
-product to present at the end of class. Datamining Final Project (Star-craft analysis)      The reason I chose this project is because it demonstrates an ability to write in python and understand 
+product to present at the end of class. Star Craft Project (Datamining Final Project)      The reason I chose this project is because it demonstrates an ability to write in python and understand 
 datamining. This project was based off Google’s Deep Mind star-craft data set. The objective of the project was to 
 create a model using different datamining techniques to determine which game strategy would be the best to take at the 
 mid-point of a Star-Craft game. In this project, my team used the pandas and sklearn python packages to analyze data and 
 create models to predict the best strategy. This project also helped me a great deal in my internship, as the company I 
-worked for used these packages for their own data analytics. 
+worked for used these packages for their own data analytics. Pig Game Project (CMPT 201 Intro To Computer Science)
+	I chose this project because it was the first major project I completed at Westminster. this project was to make
+a basic program capable of playing the Pig Game. This program had the ability for player vs player, play vs computer, 
+or computer vs computer game play. For this project I used java. This forced me to have a basic understanding of object 
+oriented software design. This was the first major project that used multiple files and classes, that I completed without 
+significant instruction or help. For this project I had to identify problems, and come up with solutions to solve those 
+problems. Although it did not know it at the time it was my first experience with designing algorithms. One of the 
+classes written during this project, was my own strategy for playing the Pig Game. It was my first experience with a very 
+basic AI for playing a simple game.
