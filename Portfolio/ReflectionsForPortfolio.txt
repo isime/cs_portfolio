@@ -5,8 +5,9 @@ requests. My team built a game to teach math to first and second grades called M
 concepts and techniques of software design, work with a team and individually, and use and learn more problem-solving 
 skills. To start the project, we had to design a game and the architecture behind it. This required us to have an 
 understanding of computers and software design. Then, throughout the project, we had to work together as a team to make 
-this design come to life. This required individual work on certain aspects of the game, and then us putting our individual components together as one. We had to solve various issues throughout the semester to create a finished product 
-to present at the end of class. Datamining Final Project (Star-craft analysis)      The reason I chose this project is because it demonstrates an ability to write in python and understand 
+this design come to life. This required individual work on certain aspects of the game, and then us putting our 
+individual components together as one. We had to solve various issues throughout the semester to create a finished 
+product to present at the end of class. Datamining Final Project (Star-craft analysis)      The reason I chose this project is because it demonstrates an ability to write in python and understand 
 datamining. This project was based off Google’s Deep Mind star-craft data set. The objective of the project was to 
 create a model using different datamining techniques to determine which game strategy would be the best to take at the 
 mid-point of a Star-Craft game. In this project, my team used the pandas and sklearn python packages to analyze data and 
