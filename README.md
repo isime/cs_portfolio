@@ -35,6 +35,8 @@ problems. Although it did not know it at the time it was my first experience wit
 classes written during this project, was my own strategy for playing the Pig Game. It was my first experience with a very 
 basic AI for playing a simple game.
 
+The rules can be found here: http://passpigs.tripod.com/rules.html
+
 ## Graph Algorithms (CMPT 306)
 
 I chose this lab because to complete it I used paired programming, critical thinking, problem solving and had to 
