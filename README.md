@@ -27,15 +27,15 @@ purpose is to help educate young students, which could effect communities at eve
 
 **Learning Goals Above:**
 
-..*System Level Understanding of the Computer
-..*Concepts and Techniques of Software Design
-..*Acquire Significant Project Experience
-..*Develop Effective Problem Solving Skills
-..*Critical Thinking
-..*Creativity
-..*Collaboration
-..*Communication
-..*Global Responsibilty
+*System Level Understanding of the Computer
+*Concepts and Techniques of Software Design
+*Acquire Significant Project Experience
+*Develop Effective Problem Solving Skills
+*Critical Thinking
+*Creativity
+*Collaboration
+*Communication
+*Global Responsibilty
 
 ## Star Craft Project (Datamining Final Project)
 
@@ -52,11 +52,11 @@ We also had to collaborate and communicate effectivly within our group to comple
 
 **Learning Goals Above:**
 
-..*Acquire Significant Project Experience
-..*Develop Effective Problem Solving Skills
-..*Critical Thinking
-..*Collaboration
-..*Communication
+*Acquire Significant Project Experience
+*Develop Effective Problem Solving Skills
+*Critical Thinking
+*Collaboration
+*Communication
 
 
 ## Pig Game Project (CMPT 201 Intro To Computer Science)
@@ -77,12 +77,12 @@ The rules can be found here: http://passpigs.tripod.com/rules.html
 
 **Learning Goals Above:**
 
-..*System Level Understanding of the Computer
-..*Concepts and Techniques of Software Design
-..*Acquire Significant Project Experience
-..*Develop Effective Problem Solving Skills
-..*Critical Thinking
-..*Creativity
+*System Level Understanding of the Computer
+*Concepts and Techniques of Software Design
+*Acquire Significant Project Experience
+*Develop Effective Problem Solving Skills
+*Critical Thinking
+*Creativity
 
 
 ## Graph Algorithms (CMPT 306)
@@ -97,10 +97,10 @@ so it required us to think through the algorithms and the syntax in order to com
 
 **Learning Goals Above:**
 
-..*Develop Effective Problem Solving Skills
-..*Critical Thinking
-..*Collaboration
-..*Communication
+*Develop Effective Problem Solving Skills
+*Critical Thinking
+*Collaboration
+*Communication
 
 
 ## Queens (CMPT 202)
@@ -115,9 +115,9 @@ this program, there are boards of all sizes used.
 
 **Learning Goals Above:**
 
-..*Concepts and Techniques of Software Design
-..*Develop Effective Problem Solving Skills
-..*Critical Thinking
+*Concepts and Techniques of Software Design
+*Develop Effective Problem Solving Skills
+*Critical Thinking
 
 
 ## Ski Clock (Capstone Project)
@@ -135,10 +135,10 @@ during the semester. Things like bugs and design flaws. This helped develop my p
 
 **Learning Goals Above:**
 
-..*System Level Understanding of the Computer
-..*Concepts and Techniques of Software Design
-..*Acquire Significant Project Experience
-..*Develop Effective Problem Solving Skills
-..*Critical Thinking
-..*Creativity
-..*Communication
+*System Level Understanding of the Computer
+*Concepts and Techniques of Software Design
+*Acquire Significant Project Experience
+*Develop Effective Problem Solving Skills
+*Critical Thinking
+*Creativity
+*Communication
