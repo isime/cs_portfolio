@@ -35,7 +35,7 @@ purpose is to help educate young students, which could effect communities at eve
 - Creativity
 - Collaboration
 - Communication
-- Global Responsibilty
+- Global Responsibility
 
 ## Star Craft Project (Datamining Final Project)
 
